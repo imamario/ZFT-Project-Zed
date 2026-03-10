@@ -20,7 +20,7 @@ for (var i = 0; i < 5; i++)
     
     xx += 110;
 }
-//a
+
 /*
 if (file_exists("world.ini"))
 {
