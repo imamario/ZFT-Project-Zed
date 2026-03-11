@@ -82,7 +82,7 @@ if global.state="dead"{x=9999 y=-9999 global.size=0};
 show_debug_message(alarm[2]);
 
 //	--- EATING ENEMIES ---	//
-if global.state!="rage"{
+if global.state="running"{
 	var _fish = instance_place(x,y,Obj_fish);//set to check which instance is meeting
 	if _fish{
 	if _fish.size<global.size || _fish.size=global.size{//checks if player is bigger than the fish

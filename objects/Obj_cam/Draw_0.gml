@@ -28,14 +28,39 @@ draw_set_alpha(Obj_player.alarm[1]);
 draw_text_scribble(_jawx1 - 280, _jawy1 + 30, "[scaleStack,1.5]" + string(_combo) + "[/scale]x");
 draw_set_alpha(1);
 }else{
-draw_set_alpha(1);
 draw_text_scribble(_jawx1 - 280, _jawy1 + 30, "[scaleStack,1.5]" + string(_hcombo) + "[/scale]x");
 }
 draw_set_alpha(1);
+// 1. Setup your target and dimensions
 
-draw_sprite_ext(
+var _max_val = 1.5;
+var _w = sprite_get_width(Spr_bar_pro);
+var _h = sprite_get_height(Spr_bar_pro);
 
+// Your coordinates
+var _draw_x = x + 425;
+var _draw_y = y - 540;
 
+// How much you want to scale the entire thing (e.g., 2 for double size)
+var _my_scale = 0.5;
+
+var _percent = clamp(global.size / _max_val, 0, 1);
+var _fill_h = _h * _percent;
+var _top_cut = _h - _fill_h;
+
+// 1. Draw Background (scaled)
+draw_sprite_ext(Spr_psize_new, 0, _draw_x, _draw_y, _my_scale, _my_scale, 0, c_white, 1);
+
+// 2. Draw Fill Part (scaled)
+// draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, colour, alpha)
+draw_sprite_part_ext(
+    Spr_bar_pro, 0, 
+    0, _top_cut, 
+    _w, _fill_h, 
+    _draw_x, _draw_y + (_top_cut * _my_scale), // Notice we multiply the offset by scale!
+    _my_scale, _my_scale, 
+    c_white, 1
+);
 
 
 

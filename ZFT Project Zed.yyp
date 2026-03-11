@@ -355,6 +355,7 @@
     {"id":{"name":"Spr_armor1","path":"sprites/Spr_armor1/Spr_armor1.yy",},},
     {"id":{"name":"Spr_armor2","path":"sprites/Spr_armor2/Spr_armor2.yy",},},
     {"id":{"name":"Spr_back","path":"sprites/Spr_back/Spr_back.yy",},},
+    {"id":{"name":"Spr_bar_pro","path":"sprites/Spr_bar_pro/Spr_bar_pro.yy",},},
     {"id":{"name":"spr_bg_joystick","path":"sprites/spr_bg_joystick/spr_bg_joystick.yy",},},
     {"id":{"name":"Spr_Booger_shooting","path":"sprites/Spr_Booger_shooting/Spr_Booger_shooting.yy",},},
     {"id":{"name":"Spr_Booger_vul","path":"sprites/Spr_Booger_vul/Spr_Booger_vul.yy",},},
