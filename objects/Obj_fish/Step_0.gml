@@ -14,6 +14,8 @@ x+=hspd;
 
 
 
+
+
 if diff>10{
 
 	if type==0{

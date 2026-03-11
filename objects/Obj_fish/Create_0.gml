@@ -24,7 +24,7 @@ size=choose(0.5,0.5,1,1,1,1.5,1.5);
 
 sprite_index=Spr_enemies2;
 size=choose(0.5,1,1.5);
-if (global.size<0.8){size=choose(0.5,0.5,0.5,0.5,0.5,1,1,1,1.5) hspd=random_range(3,5)};
+if (global.size<0.8){size=choose(0.5,0.5,0.5,0.5,0.5,1,1.5) hspd=random_range(3,5)};
 
 
 switch(size){
@@ -55,7 +55,7 @@ image_yscale=size
 if x<room_width/2{hspd=hspd image_xscale=size}else{hspd=-hspd image_xscale=-size}
 frequency=hspd*2
 
-
+eatanim=-1
 
 
 

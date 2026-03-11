@@ -87,7 +87,8 @@ if global.state="running"{
 	if _fish{
 	if _fish.size<global.size || _fish.size=global.size{//checks if player is bigger than the fish
 		
-	alarm_set(1,200);combo_info[1]++;combo_info[3]++;global.size+=global.growth;//increase combo timer combo counter total eaten and size of the player
+	alarm_set(1,200);combo_info[1]++;combo_info[3]++;//increase combo timer combo counter total eaten and size of the player
+	global.size+=global.growth;
 	
 	Obj_player.sprite_index=Spr_peating;//play eating animation
 	

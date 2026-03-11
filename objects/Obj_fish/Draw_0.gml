@@ -1,5 +1,7 @@
+if instance_exists(Obj_player){
 if global.size<size{
 draw_sprite_ext(Spr_glow,0,x,y,image_xscale/1.5,image_yscale/1.5,0,c_white,1);
+	}
 }
 shader_set(Sha_wave);
 
