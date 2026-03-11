@@ -1,32 +1,32 @@
-left=keyboard_check(ord("A"))
-right=keyboard_check(ord("D"))
-down=keyboard_check(ord("S"))
-up=keyboard_check(ord("W"))
-sprint=keyboard_check(vk_shift)
-if keyboard_check(ord("R")){room_restart()}
-randomise()
+left=keyboard_check(ord("A"));
+right=keyboard_check(ord("D"));
+down=keyboard_check(ord("S"));
+up=keyboard_check(ord("W"));
+sprint=keyboard_check(vk_shift);
+if keyboard_check(ord("R")){room_restart()};
+randomise();
 
 // --- MOVEMENT --- //
 if sprint{
-	spd=20
-}else{spd=10}
+	spd=20;
+}else{spd=10};
 
 
-_xdir= ((-left +right))
-_ydir= ((+down -up))
+_xdir= ((-left +right));
+_ydir= ((+down -up));
 
 if powerup[1]!=0{
-xto+=_xdir*spd
-yto+=_ydir*spd
+xto+=_xdir*spd;
+yto+=_ydir*spd;
 }else{
-xto-=_xdir*spd
-yto-=_ydir*spd
+xto-=_xdir*spd;
+yto-=_ydir*spd;
 }
 	
 	
 	
-movex=lerp(x,xto,delay)
-movey=lerp(y,yto,delay)
+movex=lerp(x,xto,delay);
+movey=lerp(y,yto,delay);
 
 // --- HORIZONTAL COLLISION --- //
 if (place_meeting(movex, y, Obj_wall)) {
@@ -56,47 +56,47 @@ y = movey;
 // --- SPRITE AND ANGLE LOGIC --- //
 if _xdir=-1 && draw_xscale!=-global.size{
 	if sprite_index!=Spr_peating{
-	draw_xscale=-global.size draw_yscale=global.size sprite_index=Spr_pturning
+	draw_xscale=-global.size;draw_yscale=global.size;sprite_index=Spr_pturning;
 	}	else	{
-		draw_xscale=draw_xscale
+		draw_xscale=draw_xscale;
 	}
 }
 
 if _xdir=1 && draw_xscale!=global.size{
 	if sprite_index!=Spr_peating{
-		draw_xscale=global.size draw_yscale=global.size sprite_index=Spr_pturning
+		draw_xscale=global.size;draw_yscale=global.size;sprite_index=Spr_pturning;
 	}	else	{
-		draw_xscale=draw_xscale
-	}
-}
+		draw_xscale=draw_xscale;
+	};
+};
 
 //	--- FLIP IMAGE ANGLE ---	//
 
 if draw_xscale=global.size{
-draw_angle=lerp(draw_angle,-_ydir*50,delay)
+draw_angle=lerp(draw_angle,-_ydir*50,delay);
 }else if draw_xscale=-global.size{
-draw_angle=lerp(draw_angle,_ydir*50,delay)
-}
+draw_angle=lerp(draw_angle,_ydir*50,delay);
+};
 
-if global.state="dead"{x=9999 y=-9999 global.size=0}
-show_debug_message(alarm[0])
+if global.state="dead"{x=9999 y=-9999 global.size=0};
+show_debug_message(alarm[2]);
 
 //	--- EATING ENEMIES ---	//
 if global.state!="rage"{
-	var _fish = instance_place(x,y,Obj_fish)//set to check which instance is meeting
+	var _fish = instance_place(x,y,Obj_fish);//set to check which instance is meeting
 	if _fish{
 	if _fish.size<global.size || _fish.size=global.size{//checks if player is bigger than the fish
 		
-	alarm_set(1,200) combo_info[1]++ combo_info[3]++ global.size+=global.growth //increase combo timer combo counter total eaten and size of the player
+	alarm_set(1,200);combo_info[1]++;combo_info[3]++;global.size+=global.growth;//increase combo timer combo counter total eaten and size of the player
 	
-	Obj_player.sprite_index=Spr_peating //play eating animation
+	Obj_player.sprite_index=Spr_peating;//play eating animation
 	
-	audio_play_sound(choose(Snd_eat1,Snd_eat2,Snd_eat3,Snd_eat4),1,false,random_range(0.5,1.3),0,random_range(0.8,1.2))//play a sound
+	audio_play_sound(choose(Snd_eat1,Snd_eat2,Snd_eat3,Snd_eat4),1,false,random_range(0.5,1.3),0,random_range(0.8,1.2));//play a sound
 	
-	var _bottlespawn=random(11)
-	if _bottlespawn>10{instance_create_layer(x,y,"Instances",Obj_bottle)}
+	var _bottlespawn=random(11);
+	if _bottlespawn>10{instance_create_layer(x,y,"Instances",Obj_bottle)};
 	
-	instance_destroy(_fish) 
+	instance_destroy(_fish);
 	
 	}else if _fish.size>global.size{
 	global.state="dead" audio_play_sound(Snd_jaw,1,false)};
@@ -114,9 +114,17 @@ if combo_info[0]>0{
 var _bottle = instance_place(x,y,Obj_bottle);
 
 if _bottle{
-	alarm_set(2,6000);
+	if _bottle.iv_frames<900{
+	alarm_set(2,2500)
 	powerup[0]=true;
 	powerup[1]=_bottle.image_index;
 	instance_destroy(_bottle);
+	};
+};
+
+if alarm[2]<1{
+	alarm_set(2,-1);
+	powerup[0]=false;
+	powerup[1]=-1;
 };
 

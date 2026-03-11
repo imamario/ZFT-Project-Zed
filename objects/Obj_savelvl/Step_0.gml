@@ -35,7 +35,7 @@ show_message("Level saved press Esc to return to MainMenu and test it!!")
 
 if keyboard_check_pressed(vk_escape){
 	if show_question_async("are sure you wanna leave to main menu? make sure to Ctrl + S before leaving!!!!"){
-		room_goto(Rm_main)
+		//om_goto(Rm_main);
 	}
 }
 

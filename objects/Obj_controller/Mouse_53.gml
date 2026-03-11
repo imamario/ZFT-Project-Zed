@@ -7,7 +7,7 @@ if (mouse_y + 70 < Obj_divider.y)
             sprite_index = Spr_selectable;
             image_index = global.selected;
             grabbed = true;
-        }
-    }
-}
+        };
+    };
+};
 
