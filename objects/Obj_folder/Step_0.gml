@@ -1,22 +1,15 @@
+show_debug_message("x: " + string(x))
+show_debug_message("y: " + string(y))
+show_debug_message("Timer: " + string(timer))
+show_debug_message("State: " + string(state))
 
-switch(state){
-
-case "start":
-	image_angle+=spin
-	x=lerp(x,288,0.1);
-	y=lerp(y,128,0.1);
-	if x=288 && y=128{timer+=0.01}
-	if timer>2{state="start2"}
-	break;	
-	
-case "start2":
-	timer+=0.01
-	image_angle=lerp(image_angle,360,0.1)
-	if timer>4{image_index=1}
-	if timer>5{
-		image_xscale=lerp(image_xscale,1.4,0.1)
-		image_yscale=image_xscale
-		if image_xscale=1.4 && timer>10{room_goto(Rm_menu)}
+//fix this shit
+if state=="intro"{
+	x=lerp(x,room_width/2,0.1)
+	y=lerp(y,room_height/2,0.1)
+	spin=3
+	if x=960.00{
+		spin=0 timer+=0.1 if timer>1{state="TProom"}
 	}
-	break;	
+	image_angle+=spin
 }

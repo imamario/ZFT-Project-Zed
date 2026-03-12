@@ -1,6 +1,6 @@
-spin=10
+spin=3
 if room!=Rm_menu{
-state="start"
+state="intro"
 timer=0
 }else{
 state="opened"
