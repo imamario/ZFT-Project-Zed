@@ -1,8 +1,8 @@
-left=keyboard_check(ord("A"));
-right=keyboard_check(ord("D"));
-down=keyboard_check(ord("S"));
-up=keyboard_check(ord("W"));
-sprint=keyboard_check(vk_shift);
+left=InputCheck(INPUT_VERB.LEFT);
+right=InputCheck(INPUT_VERB.RIGHT);
+down=InputCheck(INPUT_VERB.DOWN);
+up=InputCheck(INPUT_VERB.UP);
+sprint=InputCheck(INPUT_VERB.SPRINT);
 if keyboard_check(ord("R")){room_restart()};
 randomise();
 
@@ -10,7 +10,6 @@ randomise();
 if sprint{
 	spd=20;
 }else{spd=10};
-
 
 _xdir= ((-left +right));
 _ydir= ((+down -up));

@@ -19,7 +19,7 @@
   "name":"Rm_customlvl",
   "parent":{
     "name":"Modded",
-    "path":"folders/LEVELS/Modded.yy",
+    "path":"folders/Rooms/LEVELS/Modded.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

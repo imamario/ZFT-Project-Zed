@@ -28,7 +28,7 @@
   "name":"Toiletdoom_normal",
   "parent":{
     "name":"Toilet",
-    "path":"folders/LEVELS/Toilet.yy",
+    "path":"folders/Rooms/LEVELS/Toilet.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

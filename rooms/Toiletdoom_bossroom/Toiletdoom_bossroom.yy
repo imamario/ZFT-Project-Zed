@@ -21,7 +21,7 @@
   "name":"Toiletdoom_bossroom",
   "parent":{
     "name":"Toilet",
-    "path":"folders/LEVELS/Toilet.yy",
+    "path":"folders/Rooms/LEVELS/Toilet.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
