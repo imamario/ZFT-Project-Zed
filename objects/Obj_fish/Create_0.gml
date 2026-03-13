@@ -19,12 +19,12 @@ sped = 1.5;
 
 hspd=0;
 hspd=random_range(5,8);
-size=choose(0.5,0.5,1,1,1,1.5,1.5);
+
 
 
 sprite_index=Spr_enemies2;
-size=choose(0.5,1,1.5);
-if (global.size<0.8){size=choose(0.5,0.5,0.5,0.5,0.5,1,1.5) hspd=random_range(3,5)};
+size=choose(0.5,0.5,1,1,1,1.5);
+if (global.size<0.8){size=choose(0.5,0.5,0.5,0.5,0.5,1) hspd=random_range(3,5)};
 
 
 switch(size){
