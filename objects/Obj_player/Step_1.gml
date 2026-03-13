@@ -5,7 +5,7 @@ image_angle=0;
 
 
 if (global.size>1.5){
-global.state="rage";
+global.state="intro_rage";
 };
 
 	
