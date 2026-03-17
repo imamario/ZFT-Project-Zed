@@ -1,5 +1,6 @@
 var _dist = point_distance(x, y, Obj_player.x, Obj_player.y);
 var _range = 100; // The radius of your circle
+
 /*
 if (_dist <= _range) {
 glow_amount = lerp(glow_amount,0.8,0.1);
@@ -31,5 +32,3 @@ if diff>10{
 };
 
 if x=room_width+600 || x=-500{instance_destroy()};
-
-
