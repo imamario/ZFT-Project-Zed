@@ -22,7 +22,7 @@ combo_info=[0,0,0,0];
 
 spd=10;
 delay=0.07;
-can_spawn=false;
+can_spawn=true;
 
 powerup=[false,-1];
 

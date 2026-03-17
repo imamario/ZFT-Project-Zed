@@ -1,13 +1,13 @@
-/*show_debug_message("x: " + string(x))
+show_debug_message("x: " + string(x))
 show_debug_message("y: " + string(y))
 show_debug_message("Timer: " + string(timer))
 show_debug_message("State: " + string(state))
-*/
+
 //fix this shit{
 switch(state){
 	case "intro":
 	    x = lerp(x, room_width / 2, 0.1);
-		y = lerp(y, room_height / 2, 0.1);
+    y = lerp(y, room_height / 2, 0.1);
     
     spin = 3;
     image_angle=lerp(image_angle,360,0.1)
@@ -39,11 +39,8 @@ switch(state){
 	image_yscale=image_xscale;
 	x=lerp(x,2047,0.1);
 	y=lerp(y,971,0.1);
-	if (point_distance(x, y, 2047, 971) < 1) {state="Options"}// do this shit to go to next stage of drawing font
 	break;
-	
-	case "Options":
-	break;
+
 	
 
 }

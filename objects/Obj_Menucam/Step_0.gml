@@ -1,23 +1,16 @@
-switch(pos){
+switch(target){
 
 	default:
 		target = {
 			x: 1015,
 			y: 770
 		};
-	break;
-		
-	case 1:
-		target = {
-			x: 928,
-			y: 1450
-		};
-	break;
+		break;
 };
 
 xto = target.x
 yto = target.y
-
+show_debug_message(target)
 
 x += (xto - x) / 28
 y += (yto - y) / 28
