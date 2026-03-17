@@ -34,11 +34,14 @@ switch(state){
 	break;
 	
 	case "start":
-	if !instance_exists(Obj_Menucam){instance_create_layer(x,y,"Instances",Obj_Menucam)};
-	image_xscale=lerp(image_xscale,3,0.1);
-	image_yscale=image_xscale;
-	x=lerp(x,2047,0.1);
-	y=lerp(y,971,0.1);
+	image_xscale=lerp(image_xscale,3,0.1)
+	image_yscale=image_xscale
+	x=lerp(x,2047,0.1)
+	y=lerp(y,971,0.1)
+	if (point_distance(x, y, 2047, 971) < 1){
+		if !instance_exists(Obj_Menucam){instance_create_layer(x,y,"Instances",Obj_Menucam)}
+	}
+	
 	break;
 
 	

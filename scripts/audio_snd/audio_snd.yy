@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"music_play",
+  "%Name":"audio_snd",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"music_play",
+  "name":"audio_snd",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",
